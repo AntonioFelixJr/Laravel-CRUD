@@ -13,4 +13,21 @@
 
 Route::get('/', function () {
     return view('index');
+})->name('homepage');
+
+Route::get('/produtos', 'ControladorProduto@index')->name('listar.produtos');
+Route::get('/categorias', 'ControladorCategoria@index')->name('listar.categorias');
+
+Route::prefix('categorias')->group(function(){
+
+	Route::get('/', 'ControladorCategoria@index')->name('listar.categorias');
+
+	Route::post('/', 'ControladorCategoria@store')->name('store.categorias');
+
+	Route::get('/novo', 'ControladorCategoria@create')->name('criar.categoria');
+
+	Route::get('/excluir/{id}', 'ControladorCategoria@destroy')->name('excluir.categoria');
+
+
+
 });

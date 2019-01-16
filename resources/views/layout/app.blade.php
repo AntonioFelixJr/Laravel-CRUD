@@ -3,7 +3,7 @@
 
 <head>
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-	<title>Cadastro de Produtos</title>
+	<title>@yield('titulo')</title>
 	<meta name='csrf-token' content="{{ csrf_token() }}">
 	<style>
 		body {
@@ -18,8 +18,8 @@
 <body>
 
 	<div class="container">
-	@component('component_navbar')
-	@endcomponent
+		@component('component_navbar', ['current' => $current])
+		@endcomponent
 		<main role="main">
 			@hasSection('body')
 				@yield('body')

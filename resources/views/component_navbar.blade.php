@@ -7,16 +7,16 @@
 
     <ul class="navbar-nav mr-auto">
 
-      <li class="nav-item">
-        <a class="nav-link" href="homepage">Home</a>
+      <li class="nav-item {{ $current == 'homepage' ? 'active': '' }}">
+        <a class="nav-link" href="{{ route('homepage') }}">Home</a>
       </li>     
 
-      <li class="nav-item">
-        <a class="nav-link" href="produtos.listar">Produtos</a>
+      <li class="nav-item {{ $current == 'produto' ? 'active':'' }}">
+        <a class="nav-link" href="{{ route('listar.produtos') }}">Produtos</a>
       </li>
-     
-      <li class="nav-item">
-        <a class="nav-link" href="categorias.listar">Categoria</a>
+      
+      <li class="nav-item {{ $current == 'categoria' ? 'active':'' }}">
+        <a class="nav-link" href="{{ route('listar.categorias') }}">Categoria</a>
       </li>
      
     </ul>

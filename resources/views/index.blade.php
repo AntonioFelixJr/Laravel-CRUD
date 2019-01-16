@@ -1,4 +1,7 @@
-@extends('layout.app')
+@extends('layout.app', ['current' => 'homepage'])
+
+@section('titulo','Página Inical')
+
 
 @section('body')
 <div class="jumbotron bg-light border border-secondary">
@@ -14,7 +17,7 @@
 					<a href="produtos.cadastro" class="btn btn-primary">Cadastre seus produtos</a>
 				</div>	
 			</div>				
-			<div class="card border border-primary col-7">
+			<div class="card border border-primary col-6">
 				<div class="card-body">
 					<h5 class="card-title">Cadastro de Categorias</h5>
 					<p class="card-text">
