@@ -23,8 +23,8 @@
 							<td>{{$cat->id}}</td>
 							<td>{{$cat->nome}}</td>
 							<td>
-								<a href="/edita" class="btn btn-sm btn-primary">Editar</a>
-								<a href="{{ route('excluir.categoria',['id' => $cat->id]) }}" class="btn btn-sm btn-danger">Apagar</a>
+								<a href=" {{route('editar.categoria', ['id' => $cat->id ])}} " class="btn btn-sm btn-primary">Editar</a>
+								<a href="{{ route('excluir.categoria',['id' => $cat->id ]) }}" class="btn btn-sm btn-danger">Apagar</a>
 							</td>
 						</tr>
 					@endforeach

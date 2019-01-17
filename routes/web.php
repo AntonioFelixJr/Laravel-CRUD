@@ -24,9 +24,14 @@ Route::prefix('categorias')->group(function(){
 
 	Route::post('/', 'ControladorCategoria@store')->name('store.categorias');
 
+	Route::post('/{id}', 'ControladorCategoria@update')->name('atualizar.categoria');
+	
 	Route::get('/novo', 'ControladorCategoria@create')->name('criar.categoria');
 
 	Route::get('/excluir/{id}', 'ControladorCategoria@destroy')->name('excluir.categoria');
+
+	Route::get('/editar/{id}', 'ControladorCategoria@edit')->name('editar.categoria');
+
 
 
 

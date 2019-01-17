@@ -62,6 +62,15 @@ class ControladorCategoria extends Controller
      */
     public function edit($id)
     {
+        $categorias = Categoria::find($id);
+
+        if (isset($categorias)) {
+            
+            return view('editarcategoria', compact('categorias') );
+        }
+
+        return redirect()->route('listar.categorias');
+
         //
     }
 
@@ -74,8 +83,14 @@ class ControladorCategoria extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cat = Categoria::find($id);
+        if (isset($cat)){
+            $cat->nome = $request->input('nomeCategoria');
+            $cat->save();
+        }
+        return redirect()->route('listar.categorias');
     }
+    
 
     /**
      * Remove the specified resource from storage.
