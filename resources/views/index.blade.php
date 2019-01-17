@@ -14,7 +14,7 @@
 						Aqui será a área de cadastro dos produtos.
 						Só não esqueça de cadastrar previamente as caegorias.
 					</p>
-					<a href="produtos.cadastro" class="btn btn-primary">Cadastre seus produtos</a>
+					<a href="{{ route('criar.produto') }}" class="btn btn-primary">Cadastre seus produtos</a>
 				</div>	
 			</div>				
 			<div class="card border border-primary col-6">
@@ -23,7 +23,7 @@
 					<p class="card-text">
 						Aqui será a área de cadastro das categorias dos produtos.
 					</p>
-					<a href="categorias.cadastro" class="btn btn-primary">Cadastre suas categorias</a>
+					<a href="{{ route('criar.categoria') }}" class="btn btn-primary">Cadastre suas categorias</a>
 				</div>	
 			</div>
 		</dir>

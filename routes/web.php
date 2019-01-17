@@ -15,24 +15,41 @@ Route::get('/', function () {
     return view('index');
 })->name('homepage');
 
-Route::get('/produtos', 'ControladorProduto@index')->name('listar.produtos');
-Route::get('/categorias', 'ControladorCategoria@index')->name('listar.categorias');
 
 Route::prefix('categorias')->group(function(){
 
-	Route::get('/', 'ControladorCategoria@index')->name('listar.categorias');
-
-	Route::post('/', 'ControladorCategoria@store')->name('store.categorias');
+	Route::post('/', 'ControladorCategoria@store')->name('store.categoria');
 
 	Route::post('/{id}', 'ControladorCategoria@update')->name('atualizar.categoria');
+
+	Route::get('/', 'ControladorCategoria@index')->name('listar.categoria');
 	
-	Route::get('/novo', 'ControladorCategoria@create')->name('criar.categoria');
+	Route::get('/criar', 'ControladorCategoria@create')->name('criar.categoria');
 
 	Route::get('/excluir/{id}', 'ControladorCategoria@destroy')->name('excluir.categoria');
 
 	Route::get('/editar/{id}', 'ControladorCategoria@edit')->name('editar.categoria');
 
+});
+
+Route::prefix('produtos')->group(function(){
+	
+	Route::post('/', 'ControladorProduto@store')->name('store.produto');
+
+	Route::get('/', 'ControladorProduto@index')->name('listar.produto');
+
+	Route::get('/criar', 'ControladorProduto@create')->name('criar.produto');
+
+	Route::get('/excluir/{id}', 'ControladorProduto@destroy')->name('excluir.produto');
+
+	Route::get('/editar/{id}', 'ControladorProduto@edit')->name('editar.produto');
+
+
 
 
 
 });
+
+
+
+

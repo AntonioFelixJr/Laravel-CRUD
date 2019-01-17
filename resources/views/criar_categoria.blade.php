@@ -8,7 +8,7 @@
 
 <div class="card border">
 	<div class="card-body">
-		<form action="{{ route('listar.categorias') }}" method="POST">
+		<form action="{{ route('store.categoria') }}" method="POST">
 			@csrf
 			<div class="form-group">
 				<label for="nomeCategoria">Nome da Categoria</label>

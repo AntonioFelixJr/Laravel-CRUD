@@ -25,7 +25,7 @@ class ControladorCategoria extends Controller
      */
     public function create()
     {
-        return view('novacategoria');
+        return view('criar_categoria');
         
     }
 
@@ -40,7 +40,7 @@ class ControladorCategoria extends Controller
         $cat = new Categoria();
         $cat->nome = $request->input('nomeCategoria');
         $cat->save();
-        return redirect()->route('listar.categorias');
+        return redirect()->route('listar.categoria');
     }
 
     /**
@@ -66,10 +66,10 @@ class ControladorCategoria extends Controller
 
         if (isset($categorias)) {
             
-            return view('editarcategoria', compact('categorias') );
+            return view('editar_categoria', compact('categorias') );
         }
 
-        return redirect()->route('listar.categorias');
+        return redirect()->route('listar.categoria');
 
         //
     }
@@ -88,7 +88,7 @@ class ControladorCategoria extends Controller
             $cat->nome = $request->input('nomeCategoria');
             $cat->save();
         }
-        return redirect()->route('listar.categorias');
+        return redirect()->route('listar.categoria');
     }
     
 
@@ -103,7 +103,7 @@ class ControladorCategoria extends Controller
         $cat = Categoria::find($id);
         if (isset($cat)) {
             $cat->delete();
-            return redirect()->route('listar.categorias');
+            return redirect()->route('listar.categoria');
         }       
     }
 }

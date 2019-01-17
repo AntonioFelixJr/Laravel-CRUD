@@ -12,11 +12,11 @@
       </li>     
 
       <li class="nav-item {{ $current == 'produto' ? 'active':'' }}">
-        <a class="nav-link" href="{{ route('listar.produtos') }}">Produtos</a>
+        <a class="nav-link" href="{{ route('listar.produto') }}">Produtos</a>
       </li>
       
       <li class="nav-item {{ $current == 'categoria' ? 'active':'' }}">
-        <a class="nav-link" href="{{ route('listar.categorias') }}">Categoria</a>
+        <a class="nav-link" href="{{ route('listar.categoria') }}">Categoria</a>
       </li>
      
     </ul>
