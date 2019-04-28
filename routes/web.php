@@ -36,7 +36,9 @@ Route::prefix('produtos')->group(function(){
 	
 	Route::post('/', 'ControladorProduto@store')->name('store.produto');
 
-	Route::get('/', 'ControladorProduto@index')->name('listar.produto');
+	Route::post('/{id}', 'ControladorProduto@update')->name('atualizar.produto');
+
+	Route::get('/', 'ControladorProduto@indexView')->name('listar.produto');
 
 	Route::get('/criar', 'ControladorProduto@create')->name('criar.produto');
 

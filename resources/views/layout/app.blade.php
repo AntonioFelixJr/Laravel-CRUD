@@ -4,7 +4,7 @@
 <head>
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 	<title>@yield('titulo')</title>
-	<meta name='csrf-token' content="{{ csrf_token() }}">
+	<meta id="csrf-token" name='csrf-token' content="{{ csrf_token() }}">
 	<style>
 		body {
 			padding:20px;
@@ -27,5 +27,8 @@
 		</main>
 	</div>
 	<script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+@hasSection('javascript')	
+	@yield('javascript')
+@endif
 </body>
 </html>

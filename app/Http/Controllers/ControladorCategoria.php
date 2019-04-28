@@ -106,6 +106,14 @@ class ControladorCategoria extends Controller
             return redirect()->route('listar.categoria');
         }       
     }
+
+    public function indexJson()
+    {
+        $categorias = Categoria::all();
+        return json_encode($categorias);
+
+    }
+
 }
 
 
